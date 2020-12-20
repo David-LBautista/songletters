@@ -1,4 +1,5 @@
 import * as UI from './interfaz.js';
+import API from './api.js';
 
 console.log(UI);
 
@@ -23,4 +24,10 @@ function buscarCancion(e) {
             UI.divMensajes.classList.remove('error');
         }, 3000);
     }
+
+    //? Consultamos la api
+
+    const busqueda = new API(artista, cancion);
+    busqueda.consultarApi();
+    console.log(busqueda);
 }
